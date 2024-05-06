@@ -6,7 +6,7 @@ The org's formulae for the Homebrew package manager.
 
 ## How do I install these formulae?
 
-Just `brew install gidoichi/core/<formula>`.
+Just `brew install gidoichi/tap/<formula>`.
 
 ## More Documentation, Troubleshooting, Security, Community
 
