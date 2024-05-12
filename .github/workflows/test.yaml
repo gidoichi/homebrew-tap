@@ -6,12 +6,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - name: Set up Homebrew
-        id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
       - name: brew install --build-from-source
         run: |
-          pwd
-          cp -r Formula "$(brew --repository gidoichi/tap)" || true
-          HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/pmo"
+          for pkg in $(ls $(brew --repository gidoichi/tap)/Formula | sed 's/\.rb$//'); do
+            HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/pmo"
+          done
