@@ -10,6 +10,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
       - name: brew install --build-from-source
         run: |
+          set -eux
           for pkg in $(ls $(brew --repository gidoichi/tap)/Formula | sed 's/\.rb$//'); do
-            HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/pmo"
+            HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/${pkg}"
           done
