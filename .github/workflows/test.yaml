@@ -1,0 +1,16 @@
+name: Test
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: brew install --build-from-source
+        run: |
+          set -eux
+          which brew
+          pkg=pmo
+          brew tap "gidoichi/${pkg}"
+          HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --debug "$pkg"
+          # cp "${pkg}.rb" "$(brew --repository)/Library/Taps/gidoichi/homebrew-tap/Formula/"
