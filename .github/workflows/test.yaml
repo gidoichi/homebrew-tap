@@ -3,14 +3,16 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  test:
+  brew-install:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
       - name: brew install --build-from-source
+        env:
+          HOMEBREW_NO_INSTALL_FROM_API: "1"
         run: |
           set -eux
           for pkg in $(ls $(brew --repository gidoichi/tap)/Formula | sed 's/\.rb$//'); do
-            HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/${pkg}"
+            brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/${pkg}"
           done
