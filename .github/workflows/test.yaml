@@ -6,17 +6,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Set up Homebrew
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
-      - name: Set vars
-        id: brew-config
-        run: |
-          set -eu
-          v=$(brew --repository gidoichi/tap)
-          printf 'repository=%s\n' "$v" >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@v4
-        with:
-          path: "${{ steps.brew-config.outputs.repository }}"
       - name: brew install --build-from-source
-        run: HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/pmo"
+        run: |
+          cp -r Formula "$(brew --repository gidoichi/tap)"
+          HOMEBREW_NO_INSTALL_FROM_API=1 brew install --build-from-source --verbose "${GITHUB_REPOSITORY}/pmo"
