@@ -3,7 +3,7 @@ on:
   push:
   workflow_dispatch:
 jobs:
-  brew-install:
+  test-brew-install:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Homebrew
