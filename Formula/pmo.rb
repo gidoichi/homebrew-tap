@@ -1,8 +1,8 @@
 class Pmo < Formula
   desc "Package Manager Organizer"
   homepage "https://github.com/gidoichi/pmo"
-  url "https://github.com/gidoichi/pmo/archive/v0.2.1.tar.gz"
-  sha256 "75bffe609367eb3bee9aa16d722b6d09f97507885f6964b99441b66b425e2caa"
+  url "https://github.com/gidoichi/pmo/archive/v0.2.2.tar.gz"
+  sha256 "15f7b1862ce61e79000e8e63207eaea7535cc4ea05d4bfba92652594856146f6"
   license "MIT"
 
   def install
