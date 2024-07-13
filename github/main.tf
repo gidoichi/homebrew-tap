@@ -1,6 +1,6 @@
-variable "GITHUB_TOKEN" {
-  type = string
-}
+# variable "GITHUB_TOKEN" {
+#   type = string
+# }
 
 terraform {
   required_providers {
@@ -12,7 +12,7 @@ terraform {
 }
 
 provider "github" {
-  token = var.GITHUB_TOKEN
+  # token = var.GITHUB_TOKEN
   owner = "gidoichi"
 }
 

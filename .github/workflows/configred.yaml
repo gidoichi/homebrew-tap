@@ -12,12 +12,7 @@ jobs:
           terraform_wrapper: false
       - run: terraform init
         working-directory: github
-      - name: terraform apply
-        uses: dflook/terraform-plan@v1
-        with:
-          variables: GITHUB_TOKEN = ""
-          path: github
       - run: terraform plan -detailed-exitcode
         working-directory: github
         env:
-          TF_VAR_GITHUB_TOKEN:
+          TF_LOG: DEBUG
