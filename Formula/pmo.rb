@@ -28,7 +28,7 @@ class Pmo < Formula
       FileUtils.ln_s("#{config}/config", libexec/"config")
     end
     unless Dir.exist?("#{config}/managers")
-      FileUtils.ln_s(libexec/"managers", "#{config}/managers")
+      FileUtils.ln_s(opt_prefix/"libexec/managers", "#{config}/managers")
     end
   end
 end
