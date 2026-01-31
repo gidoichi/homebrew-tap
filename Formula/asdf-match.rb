@@ -1,8 +1,8 @@
 class AsdfMatch < Formula
   desc "asdf-match matches plugin version to desired one"
   homepage "https://github.com/gidoichi/asdf-match"
-  url "https://github.com/gidoichi/asdf-match/archive/refs/tags/v1.1.4.tar.gz"
-  sha256 "a96519c14fe956b1d3a589683fe566b1f47c942744f299a789cbd21e36b11f57"
+  url "https://github.com/gidoichi/asdf-match/archive/refs/tags/v1.1.5.tar.gz"
+  sha256 "4169adcb43d9e7d0ef3bda8818eff5d4e6037bb515efc279fa82c7361d93473a"
   license "MIT"
 
   def install
