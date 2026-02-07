@@ -1,8 +1,8 @@
 class YamlPath < Formula
   desc 'Get "xpath" for a given line at column of a YAML file'
   homepage "https://github.com/gidoichi/yaml-path"
-  url "https://github.com/gidoichi/yaml-path/archive/refs/tags/v1.4.30.tar.gz"
-  sha256 "7519206ac854fbdea211d2f5edcb7c758dbdf43b47033eb39ef21132a68e647c"
+  url "https://github.com/gidoichi/yaml-path/archive/refs/tags/v1.4.31.tar.gz"
+  sha256 "df39151ed85c528a807cb75bbb0301c1862866fd337acb42d098d7a06a348b09"
   license "Apache-2.0"
 
   depends_on "go" => :build
