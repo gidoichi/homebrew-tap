@@ -5,5 +5,8 @@
   ],
   "automerge": true,
   "branchConcurrentLimit": 0,
-  "labels": ["dependencies"]
+  "labels": [
+    "automerge",
+    "dependencies"
+  ]
 }
