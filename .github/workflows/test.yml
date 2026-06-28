@@ -4,10 +4,12 @@ jobs:
   brew-install:
     runs-on: ubuntu-latest
     steps:
-      - uses: Homebrew/actions/setup-homebrew@503c7f3bf65dfaeed2a1609f9446824e354c3370 # master
-      - name: brew install --build-from-source
+      - uses: Homebrew/actions/setup-homebrew@841d750a0ed9262d3c3ca31f2173974696bc261a # main
+      - name: brew install
         env:
           HOMEBREW_NO_INSTALL_FROM_API: "1"
+          # workaround: to use bubblewrap by homebrew
+          HOMEBREW_NO_SANDBOX_LINUX: "1"
         run: |
           set -eux
           brew trust "${GITHUB_REPOSITORY}"

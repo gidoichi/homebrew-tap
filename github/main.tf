@@ -35,7 +35,7 @@ resource "github_branch_protection" "default" {
     strict = true
     contexts = [
       "terraform-plan",
-      "test-brew-install",
+      "brew-install",
     ]
   }
 }
