@@ -4,7 +4,7 @@ jobs:
   brew-install:
     runs-on: ubuntu-latest
     steps:
-      - uses: Homebrew/actions/setup-homebrew@9651e3cfa42dae9ae90ca79eaa6d36dcd8569168 # main
+      - uses: Homebrew/actions/setup-homebrew@b76d5417896401ff5eb699ab8b1bf8948b001ce8 # main
       - name: brew install
         env:
           HOMEBREW_NO_INSTALL_FROM_API: "1"
